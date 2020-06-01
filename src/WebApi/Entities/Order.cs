@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Bookster.WebApi.Entities;
 using System.Linq;
 
-namespace WebApi.Entities
+namespace Bookster.WebApi.Entities
 {
     public class Order
     {

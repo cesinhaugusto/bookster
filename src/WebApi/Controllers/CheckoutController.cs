@@ -1,12 +1,11 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Bookster.WebApi.Entities;
 using Bookster.WebApi.Services;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using WebApi.Entities;
 
 namespace Bookster.WebApi.Controllers
 {
@@ -22,7 +21,7 @@ namespace Bookster.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Order>> Checkout(IEnumerable<CartItem> cart)
+        public ActionResult<Order> Checkout(IEnumerable<CartItem> cart)
         {
             var order = CreateOrder(cart);
 

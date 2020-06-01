@@ -48,10 +48,5 @@ namespace Bookster.WebApi.Services
         {
             return _books;
         }
-
-        public static Book GetBook(int bookId)
-        {
-            return _books.First(b => b.BookId == bookId);
-        }
     }
 }

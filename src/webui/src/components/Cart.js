@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   getCart,
   addToCart,
@@ -43,6 +43,7 @@ function Cart() {
               </h5>
               <svg
                 onClick={() => IncreaseBookQty(item.book)}
+                style={{ cursor: "pointer" }}
                 className="bi bi-plus"
                 width="1em"
                 height="1em"
@@ -68,6 +69,7 @@ function Cart() {
               />
               <svg
                 onClick={() => DecreaseBookQty(item.book)}
+                style={{ cursor: "pointer" }}
                 className="bi bi-dash"
                 width="1em"
                 height="1em"
@@ -82,9 +84,11 @@ function Cart() {
             </div>
           </div>
         ))}
-        <Link to="/checkout" className="btn btn-primary">
-          Checkout
-        </Link>
+        {cart.length > 0 && (
+          <Link to="/checkout" className="btn btn-primary">
+            Checkout
+          </Link>
+        )}
       </div>
     </>
   );
