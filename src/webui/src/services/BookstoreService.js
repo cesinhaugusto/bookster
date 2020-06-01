@@ -1,10 +1,9 @@
 const cartCookieName = "bookster-cart";
+const apiPath = "https://bookster-api.azurewebsites.net";
 
 export const getBooks = async () => {
   try {
-    const response = await fetch(
-      "https://bookster-api.azurewebsites.net/api/books"
-    );
+    const response = await fetch(`${apiPath}/api/books`);
     return response.json();
   } catch (error) {
     console.log(error);
@@ -77,10 +76,7 @@ export const checkout = async () => {
   let response;
 
   try {
-    response = await fetch(
-      "https://bookster-api.azurewebsites.net/api/checkout",
-      requestOptions
-    );
+    response = await fetch(`${apiPath}/api/checkout`, requestOptions);
   } catch (error) {
     console.log(error);
   }
