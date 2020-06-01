@@ -1,9 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Bookster.WebApi.Entities;
 
 namespace Bookster.WebApi.Controllers
@@ -12,19 +8,10 @@ namespace Bookster.WebApi.Controllers
     [Route("api/[controller]")]
     public class CheckoutController : ControllerBase
     {
-        private readonly ILogger<CheckoutController> _logger;
-
-        public CheckoutController(ILogger<CheckoutController> logger)
-        {
-            _logger = logger;
-        }
-
         [HttpPost]
-        public ActionResult<Order> Checkout(IEnumerable<CartItem> cart)
+        public Order Checkout(IEnumerable<CartItem> cart)
         {
-            var order = CreateOrder(cart);
-
-            return CreatedAtAction("Order", order);
+            return CreateOrder(cart);
         }
 
         Order CreateOrder(IEnumerable<CartItem> cart)
