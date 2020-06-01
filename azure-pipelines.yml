@@ -11,7 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  project: 'src/WebApi/WebApi.csproj'
+  project: 'bookster.sln'
 
 steps:
 - task: UseDotNet@2
