@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Bookster.WebApi.Entities;
-using Bookster.WebApi.Services;
 
 namespace Bookster.WebApi.Controllers
 {
